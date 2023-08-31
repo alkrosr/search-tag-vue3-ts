@@ -10,13 +10,12 @@
 
     <modal-tags @close="isModalOpen = false" v-else/>
 
-
   </main>
 </template>
 <script setup lang="ts">
-import AppButton from "@/common/components/AppButton.vue";
+import AppButton from '@/common/components/AppButton.vue';
 import {ref} from "vue";
-import ModalTags from "@/components/ModalTags.vue";
+import ModalTags from '@/components/ModalTags.vue';
 
 const isModalOpen = ref(false)
 
