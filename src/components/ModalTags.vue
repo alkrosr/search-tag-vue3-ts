@@ -50,9 +50,13 @@ import useDetectOutsideClick from '../hooks/useDetectOutsideClick.ts'
 import {ref} from "vue";
 import IconClose from "@/components/icons/IconClose.vue";
 import AppButton from "@/common/components/AppButton.vue";
+import {useStoreTags} from "@/store/tags.ts";
 
 const modalWrapper = ref("")
 const emit = defineEmits("close")
+const tagsStore = useStoreTags()
+
+void tagsStore.getTags()
 
 const closeModal = () => {
   emit('close')
