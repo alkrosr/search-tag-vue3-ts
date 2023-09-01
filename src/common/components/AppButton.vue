@@ -31,11 +31,11 @@ defineProps({
   transition: 0.5s;
   text-align: center;
 
-  color: #FFFFFF;
+
   border: none;
 
   border-radius: 8px;
-  background: var(--primary-862-fde, #862FDE);
+  //background: var(--primary-862-fde, #862FDE);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   font-size: 14px;
@@ -45,6 +45,9 @@ defineProps({
 
   &--primary {
     background-color: var(--primary-862-fde, #862FDE);
+    color: #FFFFFF;
+
+    margin-right: 20px;
 
     &:hover:not(:active) {
       opacity: .9;
@@ -69,19 +72,16 @@ defineProps({
   //  }
   //}
 
-  //&--border {
-  //  color: $blue-gray-600;
-  //  border: 1px solid $blue-gray-600;
-  //  background-color: $white-900;
-  //
-  //  &:hover:not(:active) {
-  //    background-color: $white-900;
-  //  }
-  //
-  //  &:active {
-  //    background-color: $white-700;
-  //  }
-  //}
+  &--border {
+
+    &:hover:not(:active) {
+      opacity: .9;
+    }
+
+    &:active {
+      opacity: .4;
+    }
+  }
 
   &--disabled {
     pointer-events: none;

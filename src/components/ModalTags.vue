@@ -39,7 +39,8 @@
       </div>
       <div class="modal__line"></div>
       <div class="modal__footer">
-        <!--   btns     -->
+        <app-button class="button--primary">Сохранить</app-button>
+        <app-button class="button--border" @click="closeModal">Отмена</app-button>
       </div>
     </div>
   </div>
@@ -48,6 +49,7 @@
 import useDetectOutsideClick from '../hooks/useDetectOutsideClick.ts'
 import {ref} from "vue";
 import IconClose from "@/components/icons/IconClose.vue";
+import AppButton from "@/common/components/AppButton.vue";
 
 const modalWrapper = ref("")
 const emit = defineEmits("close")
@@ -221,7 +223,9 @@ const searchTags = (value: string) => {
     }
 
     &__footer {
-      padding: 40px 40px 0 40px;
+      padding: 40px 40px 30px 40px;
+
+      display: flex;
     }
   }
 
