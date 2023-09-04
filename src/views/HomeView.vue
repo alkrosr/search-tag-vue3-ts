@@ -8,7 +8,7 @@
       Click me
     </app-button>
 
-    <modal-tags @close="isModalOpen = false" v-else/>
+    <modal-tags :data="dataStore.data" @close="isModalOpen = false" v-else/>
 
   </main>
 </template>
@@ -16,8 +16,12 @@
 import AppButton from '@/common/components/AppButton.vue';
 import {ref} from "vue";
 import ModalTags from '@/components/ModalTags.vue';
+import {useStoreData} from "@/store/data.js";
 
 const isModalOpen = ref(false)
+const dataStore = useStoreData()
+
+void dataStore.getData()
 
 const submit = () => {
   console.log("submit")

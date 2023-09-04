@@ -2,7 +2,8 @@ import { defineStore } from 'pinia'
 
 const getData = () => {
     return new Promise((resolve, reject) => {
-        const data = [{
+        const data = [
+            {
             "id": 1,
             "name": "Товары",
             "categories": [{
@@ -467,17 +468,17 @@ const getData = () => {
     });
 };
 
-export const useStoreTags = defineStore('tag', {
+export const useStoreData = defineStore('data', {
     state: () => ({
-        tags: [],
+        data: [],
         isLoadedTags: false
     }),
     actions: {
-        async getTags() {
+        async getData() {
             this.isLoadedTags = true
             try {
-                this.tags = await getData()
-                console.log("TAGS", this.tags)
+                this.data = await getData()
+                console.log("DATA", this.data)
             } catch (e) {
                 console.error(e.message)
             } finally {
